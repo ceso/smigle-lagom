@@ -13,6 +13,6 @@ Risus commodo viverra maecenas accumsan lacus vel. Pellentesque id nibh tortor i
 
 Rutrum tellus pellentesque eu tincidunt tortor aliquam. Blandit turpis cursus in hac. Lectus magna fringilla urna porttitor rhoncus dolor purus non. Eget aliquet nibh praesent tristique magna sit amet. Nisi lacus sed viverra tellus. Sodales neque sodales ut etiam sit. Id cursus metus[^2] aliquam eleifend mi in. Lectus sit amet est placerat in egestas erat imperdiet. In nisl nisi scelerisque eu ultrices vitae auctor eu. Netus et malesuada fames ac turpis. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Sagittis eu volutpat odio facilisis. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet. Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque. Vulputate odio ut enim blandit volutpat maecenas volutpat blandit aliquam. Imperdiet proin fermentum leo vel orci porta non. Eleifend donec pretium[^3] vulputate sapien. Sed risus pretium quam vulputate dignissim. Eget sit amet tellus cras. Cras tincidunt lobortis feugiat vivamus at augue eget.
 
-[^1]: This is a [link](https://codeberg.org/joseph-mccarthy/smigle-lite-hugo-theme).And that's the footnote.
-[^2]: This is a [link](https://codeberg.org/joseph-mccarthy/smigle-lite-hugo-theme).And that's the footnote.
-[^3]: This is a [link](https://codeberg.org/joseph-mccarthy/smigle-lite-hugo-theme).And that's the footnote.
+[^1]: This is a [link](https://github.com/joe-mccarthy/smigle-lite).And that's the footnote.
+[^2]: This is a [link](https:/github.com/joe-mccarthy/smigle-lite).And that's the footnote.
+[^3]: This is a [link](https://github.com/joe-mccarthy/smigle-lite).And that's the footnote.

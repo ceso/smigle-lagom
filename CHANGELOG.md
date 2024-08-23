@@ -7,7 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- Added badge to readme for build status
+### Changed
+
+- Added badge to readme for build status.
+- Updated github links for new repository location and name.
 
 ## [1.0.0] - 2024-08-23
 

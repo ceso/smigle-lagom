@@ -3,27 +3,27 @@ languageCode: en-gb
 title: Smigle Lite
 theme: ../.
 menu:
-  main: 
-    - identifier: home
-      name: Home
-      url: /
-      weight: 1
-    - identifier: about
-      name: About
-      url: /about/
-      weight: 2
-    - identifier: posts
-      name: Posts
-      url: /posts/
-      weight: 3
-    - identifier: categories
-      name: Categories
-      url: /categories/
-      weight: 5
-    - identifier: tags
-      name: Tags
-      url: /tags/
-      weight: 6
+  main:
+  - identifier: home
+    name: Home
+    url: /
+    weight: 1
+  - identifier: about
+    name: About
+    url: /about/
+    weight: 2
+  - identifier: posts
+    name: Posts
+    url: /posts/
+    weight: 3
+  - identifier: categories
+    name: Categories
+    url: /categories/
+    weight: 5
+  - identifier: tags
+    name: Tags
+    url: /tags/
+    weight: 6
 
 params:
   description: "This is the example site description. From Configuration"
@@ -31,15 +31,15 @@ params:
     enabled: true
     count: 3
   license:
-    name : CC BY-SA 4.0 
-    url : https://creativecommons.org/licenses/by-sa/4.0/#main-content-marker
+    name: CC BY-SA 4.0
+    url: https://creativecommons.org/licenses/by-sa/4.0/#main-content-marker
   abbrDateFmt: "01/02"
   dateFmt: "06/01/02"
   social:
-    - name: Codeberg
-      url: https://codeberg.org/joseph-mccarthy/smigle-lite-hugo-theme
-    - name: "RSS"
-      url: /index.xml
+  - name: GitHub
+    url: https://github.com/joe-mccarthy/smigle-lite
+  - name: "RSS"
+    url: /index.xml
 
 taxonomies:
   tags: tags
