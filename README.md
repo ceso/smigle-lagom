@@ -40,7 +40,7 @@ To try out the theme prior to changing your site to use the theme, you can start
 ```bash
 git clone https://github.com/joe-mccarthy/smigle-lite
 cd example-site
-hugo server --source . --themesDir ../../ --theme smigle-lite-hugo-theme
+hugo server --source . --themesDir ../../ --theme smigle-lite
 ```
 
 Open your web browser to http://localhost:1313 to view the demo of the theme.
