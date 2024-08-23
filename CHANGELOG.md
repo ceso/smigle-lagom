@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2024-08-23
+
 ### Changed
 
 - Added badge to readme for build status.
@@ -45,5 +47,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed the word count on posts.
 - Removed styling on taxonomies pages
 
-[unreleased]: https://github.com/joe-mccarthy/smigle-lite/compare/1.0.0...HEAD
+[unreleased]: https://github.com/joe-mccarthy/smigle-lite/compare/1.0.1...HEAD
+[1.0.1]: https://github.com/joe-mccarthy/smigle-lite/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/joe-mccarthy/smigle-lite/releases/tag/1.0.0
