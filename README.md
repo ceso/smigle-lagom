@@ -1,6 +1,7 @@
 # Smigle Lite
 
-![GitHub Release](https://img.shields.io/github/v/release/joe-mccarthy/smigle-lite?sort=semver&style=for-the-badge) ![GitHub License](https://img.shields.io/github/license/joe-mccarthy/smigle-lite?style=for-the-badge)
+![GitHub Release](https://img.shields.io/github/v/release/joe-mccarthy/smigle-lite?sort=semver&style=for-the-badge) 
+![GitHub License](https://img.shields.io/github/license/joe-mccarthy/smigle-lite?style=for-the-badge)
 
 My own site was using the [Smigle](https://gitlab.com/ian-s-mcb/smigle-hugo-theme) as I really like the concept of simplicity, lite weight with no javascript and tracking. However there were aspects that I didn't like. I found myself making far more CSS hacks than I would like. Therefore took the decision to create a new version of the theme with the changes included.
 
