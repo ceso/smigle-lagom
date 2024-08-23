@@ -1,5 +1,6 @@
 # Smigle Lite
 
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/joe-mccarthy/smigle-lite/deploy-example.yml?branch=main&style=for-the-badge)
 ![GitHub Release](https://img.shields.io/github/v/release/joe-mccarthy/smigle-lite?sort=semver&style=for-the-badge) 
 ![GitHub License](https://img.shields.io/github/license/joe-mccarthy/smigle-lite?style=for-the-badge)
 
