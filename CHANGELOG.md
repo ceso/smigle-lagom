@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Readme Typo
 - Changelog updates
 
+### Removed
+
+- Removed commit since last release badge
+
 ## [1.0.1] - 2024-08-23
 
 ### Changed
