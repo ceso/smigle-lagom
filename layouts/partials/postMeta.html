@@ -5,14 +5,14 @@
   {{ with .Params.categories }}<span><strong>in</strong></span>{{ end }}
     {{ range $key, $value := .Params.categories -}}
       {{- if $key }}, {{ end }}
-      <a href="{{ "/categories/" | absLangURL }}{{ $value | urlize }}">{{ . }}</a>
+      <a href = "{{ $.Site.BaseURL }}categories/{{ $value | urlize | lower  }}">{{$value}}</a>
     {{- end }}
   {{ with .Params.tags }}
     <div>
       <span>Tags:</span>
       {{ range $key, $value := . }}
         {{- if $key }}, {{ end }}
-        <a href="{{ "/tags/" | absLangURL }}{{ $value | urlize }}">{{ . }}</a>
+        <a href = "{{ $.Site.BaseURL }}tags/{{ $value | urlize | lower  }}">{{$value}}</a>
       {{- end }}
     </div>
   {{ end }}

@@ -5,15 +5,9 @@
     {{ with .Params.categories }}<span>in</span>{{ end }}
     {{ range $key, $value := .Params.categories -}}
       {{- if $key }}, {{ end }}
-      {{$a :=  print $value | print "/categories/" }}
-      {{ $myVar :=  $a | urlize }}
-      <a href = "{{absLangURL $myVar}}">{{$value}}
-      </a>
-      {{/*  <a href=">{{ . }}</a>  */}}
+      <a href = "{{ $.Site.BaseURL }}categories/{{ $value | urlize | lower  }}">{{$value}}</a>
     {{- end }}
   </strong>
-  <!-- {{ with .WordCount }}<span> • {{ . }} words</span>{{ end }} -->
-  <!-- {{ with .ReadingTime}}<span> • {{ . }} minute read</span>{{ end }} -->
   {{ if and .IsPage (ne .Date .Lastmod) }}
     <div>
       Last updated on
@@ -25,9 +19,7 @@
       <span>Tags:</span>
       {{ range $key, $value := . }}
         {{- if $key }}, {{ end }}
-        {{$a :=  print $value | print "/tags/"}}
-        {{ $myVar :=  $a | urlize }}
-        <a href = "{{absLangURL $myVar}}">{{$value}}</a>
+        <a href = "{{ $.Site.BaseURL }}tags/{{ $value | urlize | lower  }}">{{$value}}</a>
       {{- end }}
     </div>
   {{ end }}
