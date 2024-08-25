@@ -5,7 +5,11 @@
     {{ with .Params.categories }}<span>in</span>{{ end }}
     {{ range $key, $value := .Params.categories -}}
       {{- if $key }}, {{ end }}
-      <a href="{{ "/categories/" | absLangURL }}{{ $value | urlize }}">{{ . }}</a>
+      {{$a :=  print $value | print "/categories/"}}
+      {{ $myVar :=  $a | urlize }}
+      <a href = "{{absLangURL $myVar}}">{{$value}}
+      </a>
+      {{/*  <a href=">{{ . }}</a>  */}}
     {{- end }}
   </strong>
   <!-- {{ with .WordCount }}<span> • {{ . }} words</span>{{ end }} -->
@@ -21,7 +25,9 @@
       <span>Tags:</span>
       {{ range $key, $value := . }}
         {{- if $key }}, {{ end }}
-        <a href="{{ "/tags/" | absLangURL }}{{ $value | urlize }}">{{ . }}</a>
+        {{$a :=  print $value | print "/tags/"}}
+        {{ $myVar :=  $a | urlize }}
+        <a href = "{{absLangURL $myVar}}">{{$value}}</a>
       {{- end }}
     </div>
   {{ end }}
