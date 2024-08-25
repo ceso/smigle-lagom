@@ -5,7 +5,7 @@
     {{ with .Params.categories }}<span>in</span>{{ end }}
     {{ range $key, $value := .Params.categories -}}
       {{- if $key }}, {{ end }}
-      {{$a :=  print $value | print "/categories/"}}
+      {{$a :=  print $value | print "/categories/" }}
       {{ $myVar :=  $a | urlize }}
       <a href = "{{absLangURL $myVar}}">{{$value}}
       </a>

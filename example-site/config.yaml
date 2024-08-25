@@ -1,6 +1,6 @@
-baseURL: https://example.org
+baseURL: https://joe-mccarthy.github.io/smigle-lite
 languageCode: en-gb
-title: Smigle Lite
+title: Example Smigle Lite
 theme: ../.
 menu:
   main:
