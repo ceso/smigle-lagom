@@ -5,7 +5,7 @@
     {{ with .Params.categories }}<span>in</span>{{ end }}
     {{ range $key, $value := .Params.categories -}}
       {{- if $key }}, {{ end }}
-      <a href="{{ "categories" }}/{{ $value | urlize }}">{{ . }}</a>
+      <a href="{{ .Site.BaseURL }}/categories/{{ $value }}">{{ . }}</a>
     {{- end }}
   </strong>
   {{ if and .IsPage (ne .Date .Lastmod) }}
