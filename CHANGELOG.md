@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Readme Typo
 - Changelog updates
-- #1 tag and category links to be absolute
+- [#1](https://github.com/joe-mccarthy/smigle-lite/issues/1) tag and category links to be absolute
 
 ### Removed
 
