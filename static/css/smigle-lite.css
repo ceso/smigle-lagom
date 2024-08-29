@@ -1,3 +1,7 @@
+:root { --bgcolor: white; --fontcolor: #444; --linkcolor: #00e; --visitedcolor: #551a8b; --precolor: #fff; --prebgcolor: #000;}
+article{padding:24px 0}
+html {overflow-y: scroll}
+
 body{max-width:800px;margin:40px auto;padding:0 10px;font:14px/1.5 monospace;color:var(--fontcolor); background: var(--bgcolor)}a:link{color: var(--linkcolor)}a:visited{color: var(--visitedcolor)}a:active{color: var(--visitedcolor)}h1,h2,h3{line-height:1.2}
 
 
@@ -18,7 +22,6 @@ body{max-width:800px;margin:40px auto;padding:0 10px;font:14px/1.5 monospace;col
 
 .site-title{
   margin: 0;
-  margin-left: -13px;
   font-weight: bolder;
 }
 

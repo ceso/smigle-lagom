@@ -18,7 +18,6 @@
       <title>{{ . }}</title>
     {{ end }}
   {{ end }}
-  <link rel="stylesheet" href="{{ "css/reset.css" | relURL }}"/>
   <link rel="stylesheet" href="{{ "css/smigle-lite.css" | relURL }}"/>
   {{ range .Site.Params.customStylesheets }}
     <link rel="stylesheet" href="{{ . | relURL }}"/>
