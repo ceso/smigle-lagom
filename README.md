@@ -1,10 +1,10 @@
 # Smigle Lite
 
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/joe-mccarthy/smigle-lite/deploy-example.yml?branch=main)
-![Sonar Quality Gate](https://img.shields.io/sonar/quality_gate/joe-mccarthy_smigle-lite?server=https%3A%2F%2Fsonarcloud.io)
-![GitHub Release](https://img.shields.io/github/v/release/joe-mccarthy/smigle-lite?sort=semver)
-![GitHub commits since latest release](https://img.shields.io/github/commits-since/joe-mccarthy/smigle-lite/latest)
-![GitHub License](https://img.shields.io/github/license/joe-mccarthy/smigle-lite)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/joe-mccarthy/smigle-lite/deploy-example.yml?branch=main&cacheSeconds=1)
+![Sonar Quality Gate](https://img.shields.io/sonar/quality_gate/joe-mccarthy_smigle-lite?server=https%3A%2F%2Fsonarcloud.io&cacheSeconds=1)
+![GitHub Release](https://img.shields.io/github/v/release/joe-mccarthy/smigle-lite?sort=semver&cacheSeconds=1)
+![GitHub commits since latest release](https://img.shields.io/github/commits-since/joe-mccarthy/smigle-lite/latest?cacheSeconds=1)
+![GitHub License](https://img.shields.io/github/license/joe-mccarthy/smigle-lite?cacheSeconds=1)
 
 My own site was using the [Smigle](https://gitlab.com/ian-s-mcb/smigle-hugo-theme) as I really like the concept of simplicity, lite weight with no javascript and tracking. However there were aspects that I didn't like. I found myself making far more CSS hacks than I would like. Therefore took the decision to create a new version of the theme with the changes included.
 
