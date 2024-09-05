@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## Fixed
+## [1.1.1] - 2024-09-05
+
+### Fixed
 
 - header left margin when on mobile and desktop
 - removed rest.css to be single css and some commented out statements
@@ -68,7 +70,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed the word count on posts.
 - Removed styling on taxonomies pages
 
-[unreleased]: https://github.com/joe-mccarthy/smigle-lite/compare/1.1.0...HEAD
+[unreleased]: https://github.com/joe-mccarthy/smigle-lite/compare/1.1.1...HEAD
+[1.1.1]: https://github.com/joe-mccarthy/smigle-lite/compare/1.1.0...1.1.1
 [1.1.0]: https://github.com/joe-mccarthy/smigle-lite/compare/1.0.1...1.1.0
 [1.0.1]: https://github.com/joe-mccarthy/smigle-lite/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/joe-mccarthy/smigle-lite/releases/tag/1.0.0
