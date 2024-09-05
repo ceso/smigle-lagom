@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## Fixed
+
+- header left margin when on mobile and desktop
+- removed rest.css to be single css and some commented out statements
+
 ## [1.1.0] - 2024-08-25
 
 ### Added
