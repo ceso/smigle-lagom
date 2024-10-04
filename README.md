@@ -18,7 +18,7 @@ On the face of it, there isn't many changes from [Smigle](https://gitlab.com/ian
 * Removed the word count of posts.
 * Stripped down the post meta data listings.
 * Updated the taxonomies pages to just be lists with a count, no additional styles.
-* Updated the footer to include a reference back to [Smigle](https://gitlab.com/ian-s-mcb/smigle-hugo-theme) and [smol](https://github.com/sumnerevans/smol).
+* Updated the footer to include a reference back to [Smigle](https://gitlab.com/ian-s-mcb/smigle-hugo-theme) and [smol](https://github.com/colorchestra/smol).
 * Various spacing changes and CSS tweaks to address the removal of elements.
 
 This theme still retains the concept of the previous two themes of which it's based:
