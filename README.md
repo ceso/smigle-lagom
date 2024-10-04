@@ -88,5 +88,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgements
 
 * [Ian S. McBride](https://gitlab.com/ian-s-mcb) : The author and maintainer of the Hugo [Smigle](https://gitlab.com/ian-s-mcb/smigle-hugo-theme) Theme of which this theme is based upon.
-* [Sumner Evans](https://github.com/sumnerevans) : Maintainer of [smol](https://github.com/sumnerevans/smol) of which [Smigle](https://gitlab.com/ian-s-mcb/smigle-hugo-theme) was derived.
+* [colorchestra](https://github.com/colorchestra) : Maintainer of [smol](https://github.com/colorchestra/smol) of which [Smigle](https://gitlab.com/ian-s-mcb/smigle-hugo-theme) was derived.
 * [Hugo](https://gohugo.io/) the static site generator that makes this all possible.
