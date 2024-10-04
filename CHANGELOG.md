@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- [#4](https://github.com/joe-mccarthy/smigle-lite/issues/4) adding darkmode support
+
+### Fixed
+
+- [#5](https://github.com/joe-mccarthy/smigle-lite/issues/5) make menu links absolute
+
+### Removed
+
+- [#6](https://github.com/joe-mccarthy/smigle-lite/issues/6) body text is no longer justified
+
 ## [1.1.1] - 2024-09-05
 
 ### Fixed

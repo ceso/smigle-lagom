@@ -45,7 +45,7 @@ cd example-site
 hugo server --source . --themesDir ../../ --theme smigle-lite
 ```
 
-Open your web browser to http://localhost:1313 to view the demo of the theme.
+Open your web browser to [http://localhost:1313](http://localhost:1313) to view the demo of the theme.
 
 ### Updating
 

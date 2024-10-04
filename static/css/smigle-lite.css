@@ -2,8 +2,9 @@
 article{padding:24px 0}
 html {overflow-y: scroll}
 
-body{max-width:800px;margin:40px auto;padding:0 10px;font:14px/1.5 monospace;color:var(--fontcolor); background: var(--bgcolor)}a:link{color: var(--linkcolor)}a:visited{color: var(--visitedcolor)}a:active{color: var(--visitedcolor)}h1,h2,h3{line-height:1.2}
-
+body{max-width:800px;margin:40px auto;padding:0 10px;font:14px/1.5 monospace;color:var(--fontcolor); background: #fefefe}a:link{color: var(--linkcolor)}a:visited{color: var(--visitedcolor)}a:active{color: var(--visitedcolor)}h1,h2,h3{line-height:1.2}
+@media (prefers-color-scheme: dark){body{color:#ebebeb;background:#2b2b2b}a:link{color:#5bf}a:visited{color:#ccf}#brand a{color:#fefefe}}
+@media (prefers-color-scheme: light){body{color:#2b2b2b; background: #fefefe;} #brand a{color:#2b2b2b}}
 
 #brand {
   display: flex;
@@ -12,7 +13,6 @@ body{max-width:800px;margin:40px auto;padding:0 10px;font:14px/1.5 monospace;col
   text-align: left;
 }
 #brand a {
-  color: var(--fontcolor);
   text-decoration: none;
 }
 #brand h1, #brand h3 {
@@ -61,9 +61,6 @@ h1.title {
   }
   #brand h3 {
     font-size: 25px;
-  }
-  p{
-    text-align: justify;
   }
 }
 #postsByDate  {

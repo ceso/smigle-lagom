@@ -2,6 +2,9 @@ baseURL: https://joe-mccarthy.github.io/smigle-lite
 languageCode: en-gb
 title: Example Smigle Lite
 theme: ../.
+
+paginate: 10
+
 menu:
   main:
   - identifier: home
