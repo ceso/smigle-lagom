@@ -7,9 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2024-10-14
+
 ### Added
 
 - [#4](https://github.com/joe-mccarthy/smigle-lite/issues/4) adding darkmode support
+- Added option to turn off in post pagination
+- Within post pagination use post title or just next/previous
 
 ### Fixed
 
@@ -82,7 +86,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed the word count on posts.
 - Removed styling on taxonomies pages
 
-[unreleased]: https://github.com/joe-mccarthy/smigle-lite/compare/1.1.1...HEAD
+[unreleased]: https://github.com/joe-mccarthy/smigle-lite/compare/1.2.0...HEAD
+[1.2.0]: https://github.com/joe-mccarthy/smigle-lite/compare/1.1.1...1.2.0
 [1.1.1]: https://github.com/joe-mccarthy/smigle-lite/compare/1.1.0...1.1.1
 [1.1.0]: https://github.com/joe-mccarthy/smigle-lite/compare/1.0.1...1.1.0
 [1.0.1]: https://github.com/joe-mccarthy/smigle-lite/compare/1.0.0...1.0.1

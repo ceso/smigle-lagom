@@ -43,6 +43,9 @@ params:
     url: https://github.com/joe-mccarthy/smigle-lite
   - name: "RSS"
     url: /index.xml
+  post_nav:
+    enabled: true
+    show_title: false
 
 taxonomies:
   tags: tags
