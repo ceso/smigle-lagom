@@ -210,3 +210,9 @@ article {
   text-align: right;
   display: inline;
 }
+
+pre {
+  /*overflow-x: visible;*/ 
+  white-space: pre-wrap;
+  word-break: break-word; 
+}
