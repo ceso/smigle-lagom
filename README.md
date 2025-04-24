@@ -113,71 +113,199 @@ Then visit [http://localhost:1313](http://localhost:1313) in your browser.
 
 ## Configuration Reference
 
+Smigle Lite offers extensive configuration options to customize your site. Below is a complete reference based on the provided example configuration file.
+
 ### Basic Configuration
 
 ```yaml
-# config.yaml
-baseURL: "https://example.com/"
-languageCode: "en-us"
-title: "My Smigle Lite Site"
-theme: "smigle-lite"
+baseURL: localhost  # Your site's base URL
+languageCode: en-gb  # Language code for your site
+title: Site Title  # Your site's title
+theme: smigle  # Theme name (should be set to smigle-lite)
 
-# Main menu configuration
+paginate: 10  # Number of posts per page
+```
+
+### Menu Configuration
+
+Configure the main navigation menu that appears at the top of your site:
+
+```yaml
 menu:
   main:
-    - identifier: "home"
-      name: "Home"
-      url: "/"
-      weight: 1
-    - identifier: "posts"
-      name: "Posts"
-      url: "/posts/"
-      weight: 2
-    - identifier: "categories"
-      name: "Categories"
-      url: "/categories/"
-      weight: 3
-    - identifier: "tags"
-      name: "Tags"
-      url: "/tags/"
-      weight: 4
-    - identifier: "about"
-      name: "About"
-      url: "/about/"
-      weight: 5
+  - identifier: home  # Unique identifier for the menu item
+    name: Home  # Display name
+    url: /  # URL path
+    weight: 1  # Order in menu (lower values appear first)
+  - identifier: about
+    name: About
+    url: /about/
+    weight: 2
+  - identifier: posts
+    name: Posts
+    url: /posts/
+    weight: 3
+  - identifier: categories
+    name: Categories
+    url: /categories/
+    weight: 5
+  - identifier: tags
+    name: Tags
+    url: /tags/
+    weight: 6
 ```
 
 ### Theme Parameters
 
+Smigle Lite provides several customization parameters:
+
 ```yaml
-# Complete theme parameters
 params:
-  # Latest posts section
-  latest: 
-    enable: true  # Enable/disable latest posts section
-    count: 5      # Number of posts to display
+  # Site description (appears in metadata)
+  description: "This is the example site description. From Configuration"
   
-  # Date formats
-  abbrDateFmt: "Jan 2"  # Abbreviated date format (for lists)
-  dateFmt: "January 2, 2006"  # Long date format (for post meta)
+  # Latest posts section on homepage
+  latest:
+    enabled: true  # Enable/disable latest posts section
+    count: 3  # Number of posts to display
   
-  # Social links in footer
-  social:
-    - name: "GitHub"
-      url: "https://github.com/yourusername"
-    - name: "Twitter"
-      url: "https://twitter.com/yourusername"
-    - name: "LinkedIn"
-      url: "https://linkedin.com/in/yourusername"
-  
-  # Content license (optional)
+  # Content license information (appears in footer)
   license:
-    name: "CC BY-SA 4.0"
-    url: "https://creativecommons.org/licenses/by-sa/4.0/"
-    
-  # Other options
-  showTaxonomyLinks: true  # Show categories and tags links in post meta
-  favicon: "/favicon.ico"  # Path to favicon (relative to static folder)
+    name: CC BY-SA 4.0
+    url: https://creativecommons.org/licenses/by-sa/4.0/#main-content-marker
+  
+  # Date format configurations
+  abbrDateFmt: "01/02"  # Abbreviated date format for lists
+  dateFmt: "06/01/02"  # Full date format for post meta
+  
+  # Social links (appears in footer)
+  social:
+  - name: GitHub
+    url: https://github.com/joe-mccarthy/smigle-lite
+  - name: "RSS"
+    url: /index.xml
+  
+  # Post navigation options
+  post_nav:
+    enabled: true  # Enable/disable previous/next navigation
+    show_title: false  # Show post titles in navigation
+```
+
+#### Date Format Reference
+
+The date format uses Go's time formatting syntax:
+
+- `01`: Month (numeric)
+- `02`: Day (numeric)
+- `06`: Year (2-digit)
+- `2006`: Year (4-digit)
+- `Jan`: Month (abbreviated)
+- `January`: Month (full name)
+
+Examples:
+- `"01/02"` becomes "07/15" for July 15
+- `"06/01/02"` becomes "23/07/15" for July 15, 2023
+- `"January 2, 2006"` becomes "July 15, 2023"
+
+### Taxonomies Configuration
+
+Configure how content is categorized:
+
+```yaml
+taxonomies:
+  tags: tags  # URL will be /tags/tag-name/
+  category: categories  # URL will be /categories/category-name/
+```
+
+You can add custom taxonomies or rename existing ones through this configuration.
+
+## Complete Example Configuration
+
+For reference, here's a complete example configuration that demonstrates all available options:
+
+```yaml
+baseURL: localhost
+languageCode: en-gb
+title: Site Title
+theme: smigle-lite
+
+paginate: 10
+
+menu:
+  main:
+  - identifier: home
+    name: Home
+    url: /
+    weight: 1
+  - identifier: about
+    name: About
+    url: /about/
+    weight: 2
+  - identifier: posts
+    name: Posts
+    url: /posts/
+    weight: 3
+  - identifier: categories
+    name: Categories
+    url: /categories/
+    weight: 5
+  - identifier: tags
+    name: Tags
+    url: /tags/
+    weight: 6
+
+params:
+  description: "This is the example site description. From Configuration"
+  latest:
+    enabled: true
+    count: 3
+  license:
+    name: CC BY-SA 4.0
+    url: https://creativecommons.org/licenses/by-sa/4.0/#main-content-marker
+  abbrDateFmt: "01/02"
+  dateFmt: "06/01/02"
+  social:
+  - name: GitHub
+    url: https://github.com/joe-mccarthy/smigle-lite
+  - name: "RSS"
+    url: /index.xml
+  post_nav:
+    enabled: true
+    show_title: false
+
+taxonomies:
+  tags: tags
+  category: categories
+```
+
+This configuration should be saved as `config.yaml` in your Hugo site's root directory.
+
+## Content Configuration
+
+### Front Matter Examples
+
+Each content file in Hugo can have front matter that determines how it's processed and displayed:
+
+```yaml
+---
+title: "My First Post"
+date: 2023-07-15T10:00:00
+draft: false
+categories: ["Technology"]
+tags: ["hugo", "tutorial"]
+summary: "A quick introduction to Smigle Lite"
+---
+```
+
+For pages that should appear in the menu:
+
+```yaml
+---
+title: "About Me"
+menu:
+  main:
+    weight: 2
+---
 ```
 
 ## Customization
