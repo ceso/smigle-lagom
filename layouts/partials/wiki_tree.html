@@ -1,0 +1,24 @@
+{{ $sec := .section }}
+{{ $current := .current }}
+
+{{/* open if current page is this section or inside it */}}
+{{ $isOpen := or (eq $sec $current) (in $current.RelPermalink $sec.RelPermalink) }}
+
+<details {{ if $isOpen }}open{{ end }}>
+  <summary>{{ $sec.Title }}</summary>
+  <div class="children">
+
+    {{/* Pages directly inside this section (leaf pages only) */}}
+    {{ range $p := where $sec.Pages "Kind" "page" }}
+      <a href="{{ $p.RelPermalink }}" {{ if eq $p $current }}class="current"{{ end }}>
+        {{ $p.Title }}
+      </a>
+    {{ end }}
+
+    {{/* Nested subsections recursively */}}
+    {{ range $sub := $sec.Sections }}
+      {{ partial "wiki_tree.html" (dict "section" $sub "current" $current) }}
+    {{ end }}
+
+  </div>
+</details>

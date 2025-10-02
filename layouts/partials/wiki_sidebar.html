@@ -1,0 +1,56 @@
+{{/* top-level sidebar partial, scoped to cheatsheets/resources depending on current page */}}
+{{ $current := . }}                          {{/* page context passed into partial */}}
+{{ $currentSection := .CurrentSection }}     {{/* may be nil on some templates */}}
+
+{{/* Fallback: if we're rendering a section page (Kind == "section"), treat that as the current section */}}
+{{ if not $currentSection }}
+  {{ if eq .Kind "section" }}
+    {{ $currentSection = . }}
+  {{ end }}
+{{ end }}
+
+{{/* Helper booleans */}}
+{{ $isCheats := and $currentSection (hasPrefix $currentSection.RelPermalink "/cheatsheets/") }}
+{{ $isRes := and $currentSection (hasPrefix $currentSection.RelPermalink "/resources/") }}
+
+<nav class="sidebar" aria-label="Table of contents">
+  {{ if $isCheats }}
+    {{ $cheats := site.GetPage "section" "cheatsheets" }}
+    {{ if $cheats }}
+      <h2>Cheatsheets</h2>
+
+      {{/* Render each first-level child (no extra global wrapper) */}}
+      {{ range $child := $cheats.Sections }}
+        {{ partial "wiki_tree.html" (dict "section" $child "current" $current) }}
+      {{ end }}
+
+      {{/* Optional: pages directly in /content/cheatsheets/ (exclude _index.md) */}}
+      {{ range $p := where $cheats.Pages "Kind" "page" }}
+        <a href="{{ $p.RelPermalink }}" {{ if eq $p $current }}class="current"{{ end }}>
+          {{ $p.Title }}
+        </a>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $isRes }}
+    {{ $resources := site.GetPage "section" "resources" }}
+    {{ if $resources }}
+      <h2>Resources</h2>
+
+      {{ range $child := $resources.Sections }}
+        {{ partial "wiki_tree.html" (dict "section" $child "current" $current) }}
+      {{ end }}
+
+      {{ range $p := where $resources.Pages "Kind" "page" }}
+        <a href="{{ $p.RelPermalink }}" {{ if eq $p $current }}class="current"{{ end }}>
+          {{ $p.Title }}
+        </a>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{/* If you want a small footer note, keep it; otherwise remove */}}
+  <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:12px 0">
+  <div style="padding:8px;color:#9aa4b2;font-size:13px">I wuv cheese :D</div>
+</nav>

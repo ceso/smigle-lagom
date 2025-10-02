@@ -1,6 +1,15 @@
 <header>
   <div id="brand">
-      <a href="{{ .Site.BaseURL }}" class="site-title">{{ .Site.Title }}</a>
+      <a class="icon-link" href="{{ .Site.BaseURL }}">
+          <img
+              class="icon"
+              src="{{ default "images/brandIcon.svg" .Site.Params.brandIconFile | relURL }}"
+          />
+      </a>
+      <div class="text">
+          <a href="{{ .Site.BaseURL }}" class="site-title">{{ .Site.Title }}</a>
+          <h3>{{ default "Description about Blog Author" .Site.Params.subtitle }}</h3>
+      </div>
   </div>
   <nav>
     {{ with .Site.Menus.main }}
@@ -10,5 +19,5 @@
       {{ end }}
     {{ end }}
   </nav>
-  <hr />
+  <hr/>
 </header>

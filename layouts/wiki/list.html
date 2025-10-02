@@ -1,0 +1,31 @@
+{{ partial "wiki_header.html" . }}
+<body>
+  <div class="wrap">
+
+    <!-- Sidebar -->
+    {{ partial "wiki_sidebar.html" . }}
+
+    <!-- Main content -->
+    <main>
+      <header class="page-title">
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.description }}
+          <p>{{ . }}</p>
+        {{ end }}
+      </header>
+
+      <section>
+        {{ .Content }} <!-- _index.md content for the section -->
+        
+        {{/* Optional: list all child pages if you want */}}
+        <ul>
+          {{ range .Pages.ByWeight }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+      </section>
+
+    </main>
+  </div>
+</body>
+

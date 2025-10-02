@@ -1,0 +1,70 @@
+{{- /* layouts/partials/asciitoc.html */ -}}
+{{- $raw := .RawContent | default "" -}}
+{{- $re := `(?m)^(#{2,5})\s+(.+)$` -}}
+{{- $matches := findRESubmatch $re $raw -}}
+
+{{- if $matches }}
+<pre class="asciitoc">.{{ printf "\n" }}
+  {{- /* Collect entries: depth 1..4 (## => 1) */ -}}
+  {{- $entries := slice -}}
+  {{- range $m := $matches -}}
+    {{- $hashes := index $m 1 -}}
+    {{- $rawText := index $m 2 -}}
+    {{- $text := $rawText | plainify | trim " \t\r\n" -}}
+    {{- if $text }}
+      {{- $depth := sub (len $hashes) 1 -}}
+      {{- if and (ge $depth 1) (le $depth 4) -}}
+        {{- $href := printf "#%s" (anchorize $rawText) -}}
+        {{- $entries = $entries | append (dict "depth" $depth "text" $rawText "href" $href) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* Augment entries with isLast flag per depth */ -}}
+  {{- $aug := slice -}}
+  {{- range $i, $e := $entries -}}
+    {{- $d := index $e "depth" -}}
+    {{- $isLast := true -}}
+    {{- range $j, $f := $entries -}}
+      {{- if and (gt $j $i) (le (index $f "depth") $d) -}}
+        {{- if eq (index $f "depth") $d -}}
+          {{- $isLast = false -}}
+        {{- end -}}
+        {{- break -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $aug = $aug | append (dict "depth" $d "text" (index $e "text") "href" (index $e "href") "isLast" $isLast) -}}
+  {{- end -}}
+
+  {{- /* Render tree */ -}}
+  {{- range $i, $e := $aug -}}
+    {{- $d := index $e "depth" -}}
+    {{- $isLast := index $e "isLast" -}}
+    {{- $prefix := "" -}}
+    
+    {{- if gt $d 1 -}}
+      {{- range $level := seq 1 (sub $d 1) -}}
+        {{- /* Find nearest ancestor at this level walking backwards */ -}}
+        {{- $ancestor := dict -}}
+        {{- range $r := seq 1 $i -}}
+          {{- $cand := index $aug (sub $i $r) -}}
+          {{- if and $cand (eq (index $cand "depth") $level) -}}
+            {{- $ancestor = $cand -}}
+            {{- break -}}
+          {{- end -}}
+        {{- end -}}
+        {{- if $ancestor -}}
+          {{- if index $ancestor "isLast" -}}
+            {{- $prefix = printf "%s    " $prefix -}}
+          {{- else -}}
+            {{- $prefix = printf "%s│   " $prefix -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    
+    {{- $branch := cond $isLast "└── " "├── " -}}
+    {{- printf "%s%s<a href=\"%s\">%s</a>\n" $prefix $branch (index $e "href") (index $e "text") | safeHTML -}}
+  {{- end -}}
+</pre>
+{{- end -}}
