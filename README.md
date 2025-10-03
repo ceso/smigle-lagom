@@ -1,14 +1,8 @@
-# Smigle Lite
-
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/joe-mccarthy/smigle-lite/deploy-example.yml?branch=main&cacheSeconds=1&style=for-the-badge)
-![Sonar Quality Gate](https://img.shields.io/sonar/quality_gate/joe-mccarthy_smigle-lite?server=https%3A%2F%2Fsonarcloud.io&cacheSeconds=1&style=for-the-badge)
-![GitHub Release](https://img.shields.io/github/v/release/joe-mccarthy/smigle-lite?sort=semver&cacheSeconds=1&style=for-the-badge)
-![GitHub commits since latest release](https://img.shields.io/github/commits-since/joe-mccarthy/smigle-lite/latest?cacheSeconds=1&style=for-the-badge)
-![GitHub License](https://img.shields.io/github/license/joe-mccarthy/smigle-lite?cacheSeconds=1&style=for-the-badge)
+# Smigle lagom
 
 ## Overview
 
-Smigle Lite is a minimalist Hugo theme focused on simplicity, performance, and privacy. It was created as a streamlined alternative to the original [Smigle](https://gitlab.com/ian-s-mcb/smigle-hugo-theme) theme, removing unnecessary elements while maintaining the core principles of being lightweight with no JavaScript or tracking.
+Smigle lagom is a minimalist Hugo theme focused on simplicity, performance, and privacy. It was created as a streamlined alternative to the original [Smigle](https://gitlab.com/ian-s-mcb/smigle-hugo-theme) theme, removing unnecessary elements while maintaining the core principles of being lightweight with no JavaScript or tracking.
 
 ### Core Principles
 
@@ -19,25 +13,18 @@ Smigle Lite is a minimalist Hugo theme focused on simplicity, performance, and p
 
 ## Features
 
-### Key Differences from Original Smigle
+### Key Differences from Original Smigle-Lite
 
-Smigle Lite streamlines the original theme by:
+Smigle lagom streamlines the original theme by:
 
-* Removing the user profile image requirement
-* Eliminating the site tagline
-* Removing reading time estimates
-* Removing word count displays
-* Simplifying post metadata presentation
-* Redesigning taxonomy pages as simple lists with counts
-* Updating the footer with proper attributions
-* Various spacing improvements and CSS optimizations
-* Post Navigations
-* Recent Posts displayed on each post configurable in the config file
+* Shortcode for image
+* Wiki style added
+* Self-Customizations for my usage
 
 ### Theme Structure
 
 ```
-smigle-lite/
+smigle-lagom/
 ├── archetypes/         # Template files for new content
 ├── assets/             # CSS and other asset files
 ├── exampleSite/        # Demo site with example content
@@ -53,32 +40,32 @@ smigle-lite/
 From the root of your Hugo site:
 
 ```bash
-git submodule add https://github.com/joe-mccarthy/smigle-lite themes/smigle-lite
+git submodule add https://github.com/ceso/smigle-lagom themes/smigle-lagom
 ```
 
 Then, update your site's configuration file to use the theme:
 
 ```yaml
 # config.yaml
-theme: smigle-lite
+theme: smigle-lagom
 ```
 
 Or for TOML:
 
 ```toml
 # config.toml
-theme = "smigle-lite"
+theme = "smigle-lagom"
 ```
 
 ### Direct Download
 
-1. Download the [latest release](https://github.com/joe-mccarthy/smigle-lite/releases/latest)
+1. Download the [latest release](https://github.com/ceso/smigle-lagom/releases/latest)
 2. Extract into your site's `themes` directory
 3. Update your site's configuration file as shown above
 
 ## Quick Start Guide
 
-### Creating a New Site with Smigle Lite
+### Creating a New Site with Smigle lagom
 
 ```bash
 # Create a new Hugo site
@@ -87,10 +74,10 @@ cd mysite
 
 # Add theme
 git init
-git submodule add https://github.com/joe-mccarthy/smigle-lite themes/smigle-lite
+git submodule add https://github.com/ceso/smigle-lagom themes/smigle-lagom
 
-# Edit config.yaml to set theme: smigle-lite
-echo 'theme: smigle-lite' >> config.yaml
+# Edit config.yaml to set theme: smigle-lagom
+echo 'theme: smigle-lagom' >> config.yaml
 
 # Create a new post
 hugo new content/posts/my-first-post.md
@@ -104,8 +91,8 @@ hugo server
 To see a demo of the theme:
 
 ```bash
-git clone https://github.com/joe-mccarthy/smigle-lite
-cd smigle-lite/exampleSite
+git clone https://github.com/ceso/smigle-lagom
+cd smigle-lagom/exampleSite
 hugo server --themesDir ../..
 ```
 
@@ -113,7 +100,7 @@ Then visit [http://localhost:1313](http://localhost:1313) in your browser.
 
 ## Configuration Reference
 
-Smigle Lite offers extensive configuration options to customize your site. Below is a complete reference based on the provided example configuration file.
+Smigle lagom offers extensive configuration options to customize your site. Below is a complete reference based on the provided example configuration file.
 
 ### Basic Configuration
 
@@ -121,7 +108,7 @@ Smigle Lite offers extensive configuration options to customize your site. Below
 baseURL: localhost  # Your site's base URL
 languageCode: en-gb  # Language code for your site
 title: Site Title  # Your site's title
-theme: smigle  # Theme name (should be set to smigle-lite)
+theme: smigle  # Theme name (should be set to smigle-lagom)
 
 paginate: 10  # Number of posts per page
 ```
@@ -157,7 +144,7 @@ menu:
 
 ### Theme Parameters
 
-Smigle Lite provides several customization parameters:
+Smigle lagom provides several customization parameters:
 
 ```yaml
 params:
@@ -181,7 +168,7 @@ params:
   # Social links (appears in footer)
   social:
   - name: GitHub
-    url: https://github.com/joe-mccarthy/smigle-lite
+    url: https://github.com/ceso/smigle-lagom
   - name: "RSS"
     url: /index.xml
   
@@ -227,7 +214,7 @@ For reference, here's a complete example configuration that demonstrates all ava
 baseURL: localhost
 languageCode: en-gb
 title: Site Title
-theme: smigle-lite
+theme: smigle-lagom
 
 paginate: 10
 
@@ -266,7 +253,7 @@ params:
   dateFmt: "06/01/02"
   social:
   - name: GitHub
-    url: https://github.com/joe-mccarthy/smigle-lite
+    url: https://github.com/ceso/smigle-lagom
   - name: "RSS"
     url: /index.xml
   post_nav:
@@ -293,7 +280,7 @@ date: 2023-07-15T10:00:00
 draft: false
 categories: ["Technology"]
 tags: ["hugo", "tutorial"]
-summary: "A quick introduction to Smigle Lite"
+summary: "A quick introduction to Smigle lagom"
 ---
 ```
 
@@ -329,7 +316,7 @@ body {
 
 ### Content Organization
 
-Smigle Lite works best with the following content structure:
+Smigle lagom works best with the following content structure:
 
 ```
 content/
@@ -356,7 +343,7 @@ summary: "Optional summary that will be displayed in lists"
 
 ### Custom Shortcodes
 
-Smigle Lite supports all built-in Hugo shortcodes plus any you create in your site's `layouts/shortcodes` directory.
+Smigle lagom supports all built-in Hugo shortcodes plus any you create in your site's `layouts/shortcodes` directory.
 
 ### Image Handling
 
@@ -395,7 +382,7 @@ git submodule foreach git pull origin main
 
 ### Common Issues
 
-1. **Theme not loading**: Ensure your `config.yaml` has `theme: smigle-lite` (or `theme = "smigle-lite"` in TOML)
+1. **Theme not loading**: Ensure your `config.yaml` has `theme: smigle-lagom` (or `theme = "smigle-lagom"` in TOML)
 
 2. **Styling problems**: Check for CSS conflicts with custom CSS
 
@@ -403,7 +390,7 @@ git submodule foreach git pull origin main
 
 ## Contributing
 
-Contributions to Smigle Lite are welcome! Please follow these steps:
+Contributions to Smigle lagom are welcome! Please follow these steps:
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b my-new-feature`
@@ -422,10 +409,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgements
 
+* [Joe McCarthy](https://github.com/joe-mccarthy) - Author and maintainer of the Hugo [Smigle-Lite](https://github.com/joe-mccarthy/smigle-lite) theme
 * [Ian S. McBride](https://gitlab.com/ian-s-mcb) - Author and maintainer of the Hugo [Smigle](https://gitlab.com/ian-s-mcb/smigle-hugo-theme) theme
 * [colorchestra](https://github.com/colorchestra) - Maintainer of [smol](https://github.com/colorchestra/smol) theme
 * [Hugo](https://gohugo.io/) - The static site generator that makes this all possible
-
-## Version History
-
-See the [Releases](https://github.com/joe-mccarthy/smigle-lite/releases) page for the changelog and version history.
