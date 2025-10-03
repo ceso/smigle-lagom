@@ -1,18 +1,18 @@
 # theme.toml template for a Hugo theme
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
-name = "smigle-lite"
+name = "smigle-lagom"
 license = "MIT"
 licenselink = "https:/github.com/joe-mccarthy/smigle-lite/src/branch/main/README.md"
 description = "Minimal Hugo theme using a Monospace font and free from tracking or external dependencies"
-homepage = ""https:/github.com/joe-mccarthy/smigle-lite"
+homepage = "https:/github.com/ceso/smigle-lagom"
 tags = ["blog", "portfolio", "minimal", "monospace", "simple", "clean", "light", "responsive", "fast", "no-js", "no-tracking", "privacy"]
 features = []
 min_version = "0.41.0"
 
 [author]
-  name = "Joe McCarthy"
-  homepage = "https://joe-mccarthy.github.io"
+  name = "Leandro Lemos"
+  homepage = "https://onikenaz.ovh"
 
 # If porting an existing theme
 [original]
