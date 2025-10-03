@@ -195,10 +195,11 @@ header {
   padding: 16px 0;
 }
 
-header #brand {
+#brand {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
+  text-align: left;
 }
 
 header nav {
@@ -211,9 +212,54 @@ header nav {
 header hr {
   border: none;
   border-top: 2px solid #ccc;
-  width: 80%;
+  width: 23%;
   margin: 12px auto;
 }
+
+.site-title {
+  font-size: 2rem;
+  font-weight: bolder;
+  margin: 0;
+}
+
+#brand h1,
+#brand h3 {
+  margin: 0;
+  margin-left: -10px;
+}
+
+#brand h3 {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+#brand .icon {
+  width: 75px;
+}
+
+/* ==============================
+   Footer
+   ============================== */
+footer {
+  display: block;
+  margin-top: 30px;
+  text-align: center;
+}
+
+footer hr {
+  border: none;
+  border-top: 2px solid #ccc;
+  width: 45%;
+  margin: 12px auto;
+}
+
+/* ==============================
+   Titles & Sections
+   ==============================*/
+h1.title {
+  margin: 0;
+}
+
 
 /* ==============================
    Responsive adjustments
@@ -227,6 +273,29 @@ header hr {
     position: relative;
     height: auto;
     top: unset;
+  }
+}
+
+@media (min-width: 768px) {
+  header #root {
+    margin-top: 25px;
+  }
+
+  header #brand {
+    flex-direction: row;      /* icon left, text right */
+    align-items: center;      /* vert center the icon and titles */
+    text-align: unset;
+  }
+
+  header #brand .text {
+    margin-left: 10px;
+  }
+
+  header .site-title {
+    font-size: 35px;
+  }
+  header #brand h3 {
+    font-size: 25px;
   }
 }
 
