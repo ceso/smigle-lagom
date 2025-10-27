@@ -4,6 +4,7 @@
 		{{ range $paginator.Pages }}
         <article>
             <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+            <p>{{ partial "postMetaDetailed.html" . }}
             <p>{{ .Params.description }}</p>
         </article>
 		{{ end }}
