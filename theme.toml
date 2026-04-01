@@ -3,12 +3,12 @@
 
 name = "smigle-lagom"
 license = "MIT"
-licenselink = "https:/github.com/joe-mccarthy/smigle-lite/src/branch/main/README.md"
+licenselink = "https://github.com/joe-mccarthy/smigle-lite/src/branch/main/README.md"
 description = "Minimal Hugo theme using a Monospace font and free from tracking or external dependencies"
-homepage = "https:/github.com/ceso/smigle-lagom"
+homepage = "https://github.com/ceso/smigle-lagom"
 tags = ["blog", "portfolio", "minimal", "monospace", "simple", "clean", "light", "responsive", "fast", "no-js", "no-tracking", "privacy"]
 features = []
-min_version = "0.41.0"
+min_version = "0.110.0"
 
 [author]
   name = "Leandro Lemos"
@@ -24,4 +24,4 @@ min_version = "0.41.0"
   [module.hugoVersion]
     extended = false
     max = ""
-    min = "0.41.0"
+    min = "0.93.0"

@@ -1,5 +1,4 @@
 {{ partial "wiki_header.html" . }}
-<body>
   <div class="wrap">
 
     <!-- Sidebar -->
@@ -15,17 +14,15 @@
       </header>
 
       <section>
-        {{ .Content }} <!-- _index.md content for the section -->
-        
-        {{/* Optional: list all child pages if you want */}}
+        {{ .Content }}
+
         <ul>
-          {{ range .Pages.ByWeight }}
-            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-          {{ end }}
+        {{ range .Pages.ByWeight }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
         </ul>
       </section>
 
     </main>
   </div>
-</body>
 {{ partial "wiki_footer.html" . }}

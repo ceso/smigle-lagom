@@ -64,7 +64,7 @@
     {{- end -}}
     
     {{- $branch := cond $isLast "└── " "├── " -}}
-    {{- printf "%s%s<a href=\"%s\">%s</a>\n" $prefix $branch (index $e "href") (index $e "text") | safeHTML -}}
+    {{- $prefix | safeHTML -}}{{- $branch | safeHTML -}}<a href="{{ index $e "href" }}">{{ index $e "text" }}</a>{{ printf "\n" }}
   {{- end -}}
 </pre>
 {{- end -}}

@@ -6,7 +6,7 @@
       <br />
       {{ range $i, $e := .Site.Params.social }}
         {{ if $i }} | {{ end }}
-        <a href="{{ .url }}" target="_blank">{{ .name }}</a>
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
       {{ end }}
     </p>
   {{ end }}
@@ -15,12 +15,12 @@
     <a href="{{ .Site.BaseURL }}"><strong>{{ default "Blog Author" .Site.Params.Author }}</strong></a>.
     {{ if .Site.Params.license }}
     This work is licensed under the
-    <a href="{{ .Site.Params.license.url}}" target="_blank">{{ .Site.Params.license.name }}</a> license.
+    <a href="{{ .Site.Params.license.url }}" target="_blank" rel="noopener noreferrer">{{ .Site.Params.license.name }}</a> license.
     {{ end }}
   </p>
   <p class="builtWith">
     Built with
-    <a href="http://www.gohugo.io/">Hugo</a> by ceso,
+    <a href="https://gohugo.io/">Hugo</a> by ceso,
     using <a href="https://github.com/ceso/smigle-lagom">smigle-lagom</a> a fork of the theme
     <a href="https://github.com/joe-mccarthy/smigle-lite">smigle-lite</a>. Based on the theme
     <a href="https://gitlab.com/ian-s-mcb/smigle-hugo-theme">smigle</a>,

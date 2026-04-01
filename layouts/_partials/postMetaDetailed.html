@@ -5,7 +5,7 @@
     {{ with .Params.categories }}<span>in</span>{{ end }}
     {{ range $key, $value := .Params.categories -}}
       {{- if $key }}, {{ end }}
-      <a href = "{{ $.Site.BaseURL }}categories/{{ $value | urlize | lower  }}">{{$value}}</a>
+      <a href="{{ printf "categories/%s" ($value | urlize | lower) | relURL }}">{{ $value }}</a>
     {{- end }}
   </strong>
   {{ if and .IsPage (ne .Date .Lastmod) }}
@@ -19,7 +19,7 @@
       <span>Tags:</span>
       {{ range $key, $value := . }}
         {{- if $key }}, {{ end }}
-        <a href = "{{ $.Site.BaseURL }}tags/{{ $value | urlize | lower  }}">{{$value}}</a>
+        <a href="{{ printf "tags/%s" ($value | urlize | lower) | relURL }}">{{ $value }}</a>
       {{- end }}
     </div>
   {{ end }}

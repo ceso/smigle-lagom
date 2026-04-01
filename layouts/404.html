@@ -1,8 +1,9 @@
 {{ define "main" }}
-<main style="text-align: center; padding: 40px;">
-  <img 
-    src="{{ "/images/404.jpg" | relURL }}" 
-    style="max-width: 500px; width: 100%; margin-top: 20px; border-radius: 8px; display: block; margin-left: auto; margin-right: auto;"
+<main class="error-page">
+  <img
+    class="error-image"
+    src="{{ "/images/404.jpg" | relURL }}"
+    alt="404 Not Found"
   />
 </main>
 {{ end }}

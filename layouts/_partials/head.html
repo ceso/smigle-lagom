@@ -1,13 +1,12 @@
 <head>
-  <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<style type=text/css>body{font-family:monospace;}</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <style type="text/css">body{font-family:monospace;}</style>
 
-  
-  <meta name="description" content="{{ if .Summary }}{{ .Summary }}{{ else }}{{ .Site.Params.Description }}{{ end }}" /> 
-  <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", "}}{{ end }}" />
-  <meta name="categories" content="{{ with .Params.categories }}{{ delimit . ", "}}{{ end }}" />
+  <meta name="description" content="{{ if .Summary }}{{ .Summary | plainify | truncate 160 }}{{ else }}{{ .Site.Params.Description }}{{ end }}" />
+  <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", " }}{{ end }}" />
+  <meta name="categories" content="{{ with .Params.categories }}{{ delimit . ", " }}{{ end }}" />
 
   {{ if (eq .Title .Site.Title) }}
     {{ with $title := .Title }}
@@ -22,6 +21,10 @@
   {{ range .Site.Params.customStylesheets }}
     <link rel="stylesheet" href="{{ . | relURL }}"/>
   {{ end }}
-  <link rel="icon" href="data:image/png;base64,">
-  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/svg+xml" href="{{ default "images/brandIcon.svg" .Site.Params.brandIconFile | relURL }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "images/favicon-32x32.png" | relURL }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ "images/favicon-16x16.png" | relURL }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ "images/apple-touch-icon.png" | relURL }}">
+  <link rel="mask-icon" href="{{ "images/safari-pinned-tab.svg" | relURL }}">
+  <meta name="theme-color" content="#000000">
 </head>

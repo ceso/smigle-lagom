@@ -34,8 +34,8 @@
   {{ end }}
 {{ end }}
 </div>
-{{ end }}
 </div>
+{{ end }}
   <aside>
     {{ if .Site.Params.latest.enabled }}
       {{ $latest := first (default 3 .Site.Params.latest.count) (where (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) "Title" "!=" .Title) }}

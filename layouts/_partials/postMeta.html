@@ -1,18 +1,18 @@
 <div class="post-meta">
   <strong>
-    <time>{{ .Date.Format (default "2006-01-02" .Site.Params.dateFmt) }}</time>  
+    <time>{{ .Date.Format (default "2006-01-02" .Site.Params.dateFmt) }}</time>
   </strong>
   {{ with .Params.categories }}<span><strong>in</strong></span>{{ end }}
     {{ range $key, $value := .Params.categories -}}
       {{- if $key }}, {{ end }}
-      <a href = "{{ $.Site.BaseURL }}categories/{{ $value | urlize | lower  }}">{{$value}}</a>
+      <a href="{{ printf "categories/%s" ($value | urlize | lower) | relURL }}">{{ $value }}</a>
     {{- end }}
   {{ with .Params.tags }}
     <div>
       <span>Tags:</span>
       {{ range $key, $value := . }}
         {{- if $key }}, {{ end }}
-        <a href = "{{ $.Site.BaseURL }}tags/{{ $value | urlize | lower  }}">{{$value}}</a>
+        <a href="{{ printf "tags/%s" ($value | urlize | lower) | relURL }}">{{ $value }}</a>
       {{- end }}
     </div>
   {{ end }}
