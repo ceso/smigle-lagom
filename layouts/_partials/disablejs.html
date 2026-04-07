@@ -1,125 +1,126 @@
-{{/* disable-javascript.org scare-tactic integration */}}
+{{/* disable-javascript.org integration */}}
 {{/* Changes tab title/favicon when the tab goes to background, shows overlay on return */}}
 {{/* Custom message: set disableJsMessageFile in site params to a file path (relative to project root) */}}
 
 {{ $customMsg := "" }}
 {{ with .Site.Params.disableJsMessageFile }}
-  {{ $customMsg = readFile . }}
+{{ $customMsg = readFile . }}
 {{ end }}
 
 <template id="disablejs-msg">
   {{ if $customMsg }}
-    {{ $customMsg | safeHTML }}
+  {{ $customMsg | safeHTML }}
   {{ else }}
-    {{ partial "disablejs_default_msg.html" . }}
+  {{ partial "disablejs_default_msg.html" . }}
   {{ end }}
 </template>
 
 <script>
-function favicons() {
-  this.hidden = "hidden";
-  this.visibilityChange = "visibilitychange";
-  this.favicon = document.querySelector("[rel='shortcut icon']").href;
-  this.title = document.title;
-  this.wasSpoofed = false;
-  this.spoofed = [];
+  function favicons() {
+    this.hidden = "hidden";
+    this.visibilityChange = "visibilitychange";
+    var iconLink = document.querySelector("link[rel='icon'], link[rel='shortcut icon']");
+    this.favicon = iconLink ? iconLink.href : "";
+    this.title = document.title;
+    this.wasSpoofed = false;
+    this.spoofed = [];
 
-  this.services = {
-    sy: function () {
-      return {
-        title: "Official Church of Scientology: Difficulties on the Job - Online Course",
-        favicon: "{{ "images/disablejs/sy.png" | relURL }}"
+    this.services = {
+      sy: function () {
+        return {
+          title: "Official Church of Scientology: Difficulties on the Job - Online Course",
+          favicon: "{{ "images/disablejs/sy.png" | relURL }}"
       };
     },
-    cdc: function () {
-      return {
-        title: "Ask HN: How could I safely contact drug cartels?",
-        favicon: "{{ "images/disablejs/hn.png" | relURL }}"
+      cdc: function () {
+        return {
+          title: "Ask HN: How could I safely contact drug cartels?",
+          favicon: "{{ "images/disablejs/hn.png" | relURL }}"
       };
+  },
+  rps: function () {
+    return {
+      title: "rust programming socks - Google Shopping",
+      favicon: "{{ "images/disablejs/go.ico" | relURL }}"
+  };
     },
-    rps: function () {
-      return {
-        title: "rust programming socks - Google Shopping",
-        favicon: "{{ "images/disablejs/go.ico" | relURL }}"
-      };
+  aec: function () {
+    return {
+      title: "Adult entertainment clubs - Google Maps",
+      favicon: "{{ "images/disablejs/gm.png" | relURL }}"
+  };
     },
-    aec: function () {
-      return {
-        title: "Adult entertainment clubs - Google Maps",
-        favicon: "{{ "images/disablejs/gm.png" | relURL }}"
-      };
+  pul: function () {
+    return {
+      title: "Pick up lines suggestions - ChatGPT",
+      favicon: "{{ "images/disablejs/cgpt.png" | relURL }}"
+  };
     },
-    pul: function () {
-      return {
-        title: "Pick up lines suggestions - ChatGPT",
-        favicon: "{{ "images/disablejs/cgpt.png" | relURL }}"
-      };
+  fes: function () {
+    return {
+      title: "The Flat Earth Society",
+      favicon: "{{ "images/disablejs/fes.png" | relURL }}"
+  };
     },
-    fes: function () {
-      return {
-        title: "The Flat Earth Society",
-        favicon: "{{ "images/disablejs/fes.png" | relURL }}"
-      };
+  tsm: function () {
+    return {
+      title: "Amazon.com: taylor swift merch",
+      favicon: "{{ "images/disablejs/az.ico" | relURL }}"
+  };
     },
-    tsm: function () {
-      return {
-        title: "Amazon.com: taylor swift merch",
-        favicon: "{{ "images/disablejs/az.ico" | relURL }}"
-      };
+  wp: function () {
+    return {
+      title: "Amazon.com: waifu dakimakura",
+      favicon: "{{ "images/disablejs/az.ico" | relURL }}"
+  };
     },
-    wp: function () {
-      return {
-        title: "Amazon.com: waifu dakimakura",
-        favicon: "{{ "images/disablejs/az.ico" | relURL }}"
-      };
+  rwsb: function () {
+    return {
+      title: "r/gonewild on Reddit",
+      favicon: "{{ "images/disablejs/rd.png" | relURL }}"
+  };
     },
-    rwsb: function () {
-      return {
-        title: "r/gonewild on Reddit",
-        favicon: "{{ "images/disablejs/rd.png" | relURL }}"
-      };
+  iw: function () {
+    return {
+      title: "Hillbilly Elegy by J.D. Vance | Goodreads",
+      favicon: "{{ "images/disablejs/gr.png" | relURL }}"
+  };
     },
-    iw: function () {
-      return {
-        title: "Hillbilly Elegy by J.D. Vance | Goodreads",
-        favicon: "{{ "images/disablejs/gr.png" | relURL }}"
-      };
+  tac: function () {
+    return {
+      title: "The Anarchist Cookbook by William Powell | Goodreads",
+      favicon: "{{ "images/disablejs/gr.png" | relURL }}"
+  };
     },
-    tac: function () {
-      return {
-        title: "The Anarchist Cookbook by William Powell | Goodreads",
-        favicon: "{{ "images/disablejs/gr.png" | relURL }}"
-      };
+  nxfs: function () {
+    return {
+      title: "Sasha Grey - Pornstar page - XVIDEOS.COM",
+      favicon: "{{ "images/disablejs/xv.png" | relURL }}"
+  };
     },
-    nxfs: function () {
-      return {
-        title: "Sasha Grey - Pornstar page - XVIDEOS.COM",
-        favicon: "{{ "images/disablejs/xv.png" | relURL }}"
-      };
+  jbn: function () {
+    return {
+      title: "jeff bezos nudes - Google Image Search",
+      favicon: "{{ "images/disablejs/go.ico" | relURL }}"
+  };
     },
-    jbn: function () {
-      return {
-        title: "jeff bezos nudes - Google Image Search",
-        favicon: "{{ "images/disablejs/go.ico" | relURL }}"
-      };
+  nggyu: function () {
+    return {
+      title: "Rick Astley - Never Gonna Give You Up - YouTube",
+      favicon: "{{ "images/disablejs/yt.ico" | relURL }}"
+  };
     },
-    nggyu: function () {
-      return {
-        title: "Rick Astley - Never Gonna Give You Up - YouTube",
-        favicon: "{{ "images/disablejs/yt.ico" | relURL }}"
-      };
+  beast: function () {
+    return {
+      title: "Jake Paul - It's Everyday Bro (feat. Team 10) - YouTube",
+      favicon: "{{ "images/disablejs/yt.ico" | relURL }}"
+  };
     },
-    beast: function () {
-      return {
-        title: "Jake Paul - It's Everyday Bro (feat. Team 10) - YouTube",
-        favicon: "{{ "images/disablejs/yt.ico" | relURL }}"
-      };
-    },
-    ftx: function () {
-      return {
-        title: "Teens (18+) Videos - Pornhub.com",
-        favicon: "{{ "images/disablejs/ph.png" | relURL }}"
-      };
+  ftx: function () {
+    return {
+      title: "Teens (18+) Videos - Pornhub.com",
+      favicon: "{{ "images/disablejs/ph.png" | relURL }}"
+  };
     }
   };
 
@@ -152,15 +153,18 @@ function favicons() {
 
   this.update = function (data) {
     var cacheBuster = "?v=" + Math.round(Math.random() * 10000000);
-    var link = document.createElement("link");
-    link.type = "image/x-icon";
-    link.rel = "shortcut icon";
-    link.href = data.favicon + cacheBuster;
-    var existing = document
-      .getElementsByTagName("head")[0]
-      .querySelector("[rel='shortcut icon']");
-    if (existing) existing.remove();
-    document.getElementsByTagName("head")[0].appendChild(link);
+    var head = document.getElementsByTagName("head")[0];
+    var existing = head.querySelectorAll(
+      "link[rel='icon'], link[rel='shortcut icon'], link[rel='apple-touch-icon'], link[rel='mask-icon']"
+    );
+    for (var i = 0; i < existing.length; i++) existing[i].remove();
+    setTimeout(function () {
+      var link = document.createElement("link");
+      link.rel = "icon";
+      link.type = data.favicon.indexOf(".png") > -1 ? "image/png" : "image/x-icon";
+      link.href = data.favicon + cacheBuster;
+      head.appendChild(link);
+    }, 0);
     document.title = data.title;
     if (this.wasSpoofed === true) {
       var overlay = document.getElementById("disablejs");
@@ -200,10 +204,15 @@ function favicons() {
   this.init();
 }
 
-function closeDisablejsInfo() {
-  document.getElementById("disablejs").style.display = "none";
-}
+  function closeDisablejsInfo() {
+    document.getElementById("disablejs").style.display = "none";
+  }
 
-new favicons();
+  (function () {
+    var overlay = document.createElement("div");
+    overlay.id = "disablejs";
+    overlay.addEventListener("click", closeDisablejsInfo);
+    document.body.appendChild(overlay);
+    new favicons();
+  })();
 </script>
-<div id="disablejs" onclick="closeDisablejsInfo()"></div>

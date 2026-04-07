@@ -363,6 +363,17 @@ article h6 {
   color: var(--linkcolor);
 }
 
+aside.notice {
+  border-left: 3px solid var(--hovercolor);
+  background: rgba(255, 125, 0, 0.05);
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0;
+}
+
+aside.notice code {
+  color: var(--hovercolor);
+}
+
 #disablejs blockquote {
   max-width: 500px;
   margin: 1.5rem auto;
